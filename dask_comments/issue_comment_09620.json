@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1330283333",
+        "html_url": "https://github.com/dask/dask/issues/9620#issuecomment-1330283333",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9620",
+        "id": 1330283333,
+        "node_id": "IC_kwDOAbcwm85PSoNF",
+        "user": {
+            "login": "rubenvdg",
+            "id": 37443208,
+            "node_id": "MDQ6VXNlcjM3NDQzMjA4",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37443208?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rubenvdg",
+            "html_url": "https://github.com/rubenvdg",
+            "followers_url": "https://api.github.com/users/rubenvdg/followers",
+            "following_url": "https://api.github.com/users/rubenvdg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rubenvdg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rubenvdg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rubenvdg/subscriptions",
+            "organizations_url": "https://api.github.com/users/rubenvdg/orgs",
+            "repos_url": "https://api.github.com/users/rubenvdg/repos",
+            "events_url": "https://api.github.com/users/rubenvdg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rubenvdg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-11-29T08:46:43Z",
+        "updated_at": "2022-11-29T08:57:01Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "`ddf.groupby(\"name\").agg(\"cumsum\")` should not work imo because `cumsum` is not an aggregation (like `min` and `sum`) but a transformation.\r\n\r\nThe fact that `df.groupby(\"name\").agg('cumsum')` currently works in pandas is due to a bug (e.g. https://github.com/pandas-dev/pandas/issues/44845, https://github.com/pandas-dev/pandas/issues/35725).\r\n\r\nFor example, in pandas if you'd do something like:\r\n\r\n```\r\ndf = pd.DataFrame({\r\n    \"key\": [\"a\", \"a\", \"b\", \"b\", \"b\"],\r\n    \"value\": range(5)\r\n})\r\n\r\ndf.groupby(\"key\")[\"value\"].agg(lambda col: col.cumsum())\r\n```\r\n\r\nyou catch `ValueError: Must produce aggregated value` (which is expected behavior). ",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1330283333/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

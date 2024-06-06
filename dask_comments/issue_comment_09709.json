@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1335931841",
+        "html_url": "https://github.com/dask/dask/issues/9709#issuecomment-1335931841",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9709",
+        "id": 1335931841,
+        "node_id": "IC_kwDOAbcwm85PoLPB",
+        "user": {
+            "login": "ncclementi",
+            "id": 7526622,
+            "node_id": "MDQ6VXNlcjc1MjY2MjI=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/7526622?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ncclementi",
+            "html_url": "https://github.com/ncclementi",
+            "followers_url": "https://api.github.com/users/ncclementi/followers",
+            "following_url": "https://api.github.com/users/ncclementi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ncclementi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ncclementi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ncclementi/subscriptions",
+            "organizations_url": "https://api.github.com/users/ncclementi/orgs",
+            "repos_url": "https://api.github.com/users/ncclementi/repos",
+            "events_url": "https://api.github.com/users/ncclementi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ncclementi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-12-02T22:39:36Z",
+        "updated_at": "2022-12-02T22:39:36Z",
+        "author_association": "MEMBER",
+        "body": "Hi @epizut, \r\n\r\nCan you show us a minimal reproducible example of \"When using map_partitions(), some computation needs the theoretical partition end in order to avoid overlapping with the next partition.\"\r\n\r\nI think this will add more context for people to understand the need of adding something like this.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1335931841/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

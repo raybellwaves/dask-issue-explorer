@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/2117578576",
+        "html_url": "https://github.com/dask/dask/issues/11124#issuecomment-2117578576",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/11124",
+        "id": 2117578576,
+        "node_id": "IC_kwDOAbcwm85-N69Q",
+        "user": {
+            "login": "dstansby",
+            "id": 6197628,
+            "node_id": "MDQ6VXNlcjYxOTc2Mjg=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6197628?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dstansby",
+            "html_url": "https://github.com/dstansby",
+            "followers_url": "https://api.github.com/users/dstansby/followers",
+            "following_url": "https://api.github.com/users/dstansby/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dstansby/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dstansby/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dstansby/subscriptions",
+            "organizations_url": "https://api.github.com/users/dstansby/orgs",
+            "repos_url": "https://api.github.com/users/dstansby/repos",
+            "events_url": "https://api.github.com/users/dstansby/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dstansby/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2024-05-17T13:13:42Z",
+        "updated_at": "2024-05-17T13:13:42Z",
+        "author_association": "NONE",
+        "body": "Here's an even simpler reproducible example:\r\n\r\n```python\r\nimport dask.array as da\r\nimport numpy as np\r\n\r\nx = da.arange(4, chunks=2)\r\nprint(x.compute())\r\nprint(x.map_blocks(lambda x: np.stack([x, x * 0.5]), new_axis=[0]).compute())\r\nprint(x.map_overlap(lambda x: np.stack([x, x * 0.5]), depth=1, new_axis=[0]).compute())\r\n```\r\n```\r\narray([0, 1, 2, 3])\r\narray([[0. , 1. , 2. , 3. ],\r\n       [0. , 0.5, 1. , 1.5]])\r\narray([[0. , 1. , 2. , 1. , 2. , 3. ],\r\n       [0. , 0.5, 1. , 0.5, 1. , 1.5]])\r\n```\r\n\r\nIt looks like the edge overlaps are being trimmed with `map_overlap`, but the interior overlaps are not being trimmed before returning the result.\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/2117578576/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

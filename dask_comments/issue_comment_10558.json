@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1762198222",
+        "html_url": "https://github.com/dask/dask/issues/10558#issuecomment-1762198222",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10558",
+        "id": 1762198222,
+        "node_id": "IC_kwDOAbcwm85pCQLO",
+        "user": {
+            "login": "graingert",
+            "id": 413772,
+            "node_id": "MDQ6VXNlcjQxMzc3Mg==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/413772?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/graingert",
+            "html_url": "https://github.com/graingert",
+            "followers_url": "https://api.github.com/users/graingert/followers",
+            "following_url": "https://api.github.com/users/graingert/following{/other_user}",
+            "gists_url": "https://api.github.com/users/graingert/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/graingert/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/graingert/subscriptions",
+            "organizations_url": "https://api.github.com/users/graingert/orgs",
+            "repos_url": "https://api.github.com/users/graingert/repos",
+            "events_url": "https://api.github.com/users/graingert/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/graingert/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-10-13T20:47:42Z",
+        "updated_at": "2023-10-13T20:50:39Z",
+        "author_association": "MEMBER",
+        "body": "Interestingly it also fails on 3.12 https://github.com/dask/dask/actions/runs/6507665117/job/17675524489?pr=10544#step:9:26115\r\n\r\nThis is using pandas 2.1.1 https://github.com/dask/dask/actions/runs/6507665117/job/17675524489?pr=10544#step:4:936",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1762198222/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

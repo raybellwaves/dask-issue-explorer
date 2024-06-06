@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/299011526",
+        "html_url": "https://github.com/dask/dask/issues/2292#issuecomment-299011526",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/2292",
+        "id": 299011526,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDI5OTAxMTUyNg==",
+        "user": {
+            "login": "mrocklin",
+            "id": 306380,
+            "node_id": "MDQ6VXNlcjMwNjM4MA==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/306380?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mrocklin",
+            "html_url": "https://github.com/mrocklin",
+            "followers_url": "https://api.github.com/users/mrocklin/followers",
+            "following_url": "https://api.github.com/users/mrocklin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mrocklin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mrocklin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mrocklin/subscriptions",
+            "organizations_url": "https://api.github.com/users/mrocklin/orgs",
+            "repos_url": "https://api.github.com/users/mrocklin/repos",
+            "events_url": "https://api.github.com/users/mrocklin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mrocklin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2017-05-03T19:30:08Z",
+        "updated_at": "2017-05-03T19:30:08Z",
+        "author_association": "MEMBER",
+        "body": "### What is done today\r\n\r\nIn practice this is done by tacking things onto a local module or onto the current worker (in the dask.distributed case)\r\n\r\n```python\r\nfrom distributed import get_worker\r\nmy_local_worker = get_worker()\r\ntry:\r\n    thing = my_local_worker.mything\r\nexcept AttributeError:\r\n    thing = make_thing()\r\n    my_local_worker.mything = thing\r\n```\r\n\r\nOr by using the thread_state present in `distributed/worker.py` or in a user-defined module\r\n\r\n```python\r\nfrom distributed.worker import thread_state\r\n```\r\n\r\nWe could make these more public if that would help.\r\n\r\n### Integration with dask.delayed/dask.array/schedulers?\r\n\r\nWhat's above may satisfy your needs.  If so then great.  It sounds like you had some integration with dask.delayed and dask.array in mind.  It's not clear to me yet how to do this, though I'm open to the idea if it can be shown to be feasible with minimal code complexity burden.  As always when adding a special case, avoiding code complexity throughout the rest of the codebase is often the hard part.   This can be particularly expensive if you plan to touch both the collections and the schedulers.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/299011526/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/797531682",
+        "html_url": "https://github.com/dask/dask/pull/6084#issuecomment-797531682",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/6084",
+        "id": 797531682,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDc5NzUzMTY4Mg==",
+        "user": {
+            "login": "martindurant",
+            "id": 6042212,
+            "node_id": "MDQ6VXNlcjYwNDIyMTI=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6042212?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martindurant",
+            "html_url": "https://github.com/martindurant",
+            "followers_url": "https://api.github.com/users/martindurant/followers",
+            "following_url": "https://api.github.com/users/martindurant/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martindurant/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martindurant/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martindurant/subscriptions",
+            "organizations_url": "https://api.github.com/users/martindurant/orgs",
+            "repos_url": "https://api.github.com/users/martindurant/repos",
+            "events_url": "https://api.github.com/users/martindurant/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martindurant/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-03-12T14:41:04Z",
+        "updated_at": "2021-03-12T14:41:04Z",
+        "author_association": "MEMBER",
+        "body": "This PR has stalled and should be closed. Given that *some* of the configuration was implemented in #6087, perhaps the original issue #6083 should be closed too?",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/797531682/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

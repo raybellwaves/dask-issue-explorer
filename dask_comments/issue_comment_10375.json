@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1609759877",
+        "html_url": "https://github.com/dask/dask/issues/10375#issuecomment-1609759877",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10375",
+        "id": 1609759877,
+        "node_id": "IC_kwDOAbcwm85f8vyF",
+        "user": {
+            "login": "ivirshup",
+            "id": 8238804,
+            "node_id": "MDQ6VXNlcjgyMzg4MDQ=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/8238804?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ivirshup",
+            "html_url": "https://github.com/ivirshup",
+            "followers_url": "https://api.github.com/users/ivirshup/followers",
+            "following_url": "https://api.github.com/users/ivirshup/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ivirshup/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ivirshup/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ivirshup/subscriptions",
+            "organizations_url": "https://api.github.com/users/ivirshup/orgs",
+            "repos_url": "https://api.github.com/users/ivirshup/repos",
+            "events_url": "https://api.github.com/users/ivirshup/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ivirshup/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-06-27T15:32:14Z",
+        "updated_at": "2023-06-27T15:32:14Z",
+        "author_association": "NONE",
+        "body": "Ah, looks like it just needs an implementation in dask. Is there a minimum supported scipy version defined somewhere?",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1609759877/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1402115256",
+        "html_url": "https://github.com/dask/dask/issues/9850#issuecomment-1402115256",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9850",
+        "id": 1402115256,
+        "node_id": "IC_kwDOAbcwm85TkpS4",
+        "user": {
+            "login": "crusaderky",
+            "id": 6213168,
+            "node_id": "MDQ6VXNlcjYyMTMxNjg=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6213168?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/crusaderky",
+            "html_url": "https://github.com/crusaderky",
+            "followers_url": "https://api.github.com/users/crusaderky/followers",
+            "following_url": "https://api.github.com/users/crusaderky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/crusaderky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/crusaderky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/crusaderky/subscriptions",
+            "organizations_url": "https://api.github.com/users/crusaderky/orgs",
+            "repos_url": "https://api.github.com/users/crusaderky/repos",
+            "events_url": "https://api.github.com/users/crusaderky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/crusaderky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-01-24T15:17:31Z",
+        "updated_at": "2023-01-24T15:17:31Z",
+        "author_association": "MEMBER",
+        "body": "XREF (for parquet only): https://github.com/dask/dask/pull/9637",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1402115256/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

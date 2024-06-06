@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/983440465",
+        "html_url": "https://github.com/dask/dask/issues/8437#issuecomment-983440465",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/8437",
+        "id": 983440465,
+        "node_id": "IC_kwDOAbcwm846nhxR",
+        "user": {
+            "login": "DahnJ",
+            "id": 18722560,
+            "node_id": "MDQ6VXNlcjE4NzIyNTYw",
+            "avatar_url": "https://avatars.githubusercontent.com/u/18722560?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/DahnJ",
+            "html_url": "https://github.com/DahnJ",
+            "followers_url": "https://api.github.com/users/DahnJ/followers",
+            "following_url": "https://api.github.com/users/DahnJ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/DahnJ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/DahnJ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/DahnJ/subscriptions",
+            "organizations_url": "https://api.github.com/users/DahnJ/orgs",
+            "repos_url": "https://api.github.com/users/DahnJ/repos",
+            "events_url": "https://api.github.com/users/DahnJ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/DahnJ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-12-01T09:14:43Z",
+        "updated_at": "2021-12-01T09:14:43Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "To me, this has actually been an accidental feature, rather than a bug \u2014 that is I can just `map_partitions` and be sure that I don't get a single index value split over multiple partitions.\r\n\r\nPossibly there should be an option to still force that behaviour, a function that merges partitions with overlapping index, or perhaps an option to `map_partition` that treats those partitions as a single partition.\r\n\r\nIt's also possible that the need for this completely disappears if https://github.com/dask/dask/issues/8361 gets implemented, but not all of my uses for `map_partitions` use groupby. I have for example used it to perform window operations within a single index. One could use something like `groupby().transform`, but that operated slower on Pandas level than custom vectorized versions with lag operations etc. Using `map_partitions` there at least lets Dask know that no communication is needed between partitions.\r\n\r\nThe general idea is: you might sometimes want to \"map over index\" without using a groupby aggregation. Currently, `map_partitions` provides that functionality thanks to this \"bug\".",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/983440465/reactions",
+            "total_count": 3,
+            "+1": 3,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

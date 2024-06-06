@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/519558175",
+        "html_url": "https://github.com/dask/dask/issues/1340#issuecomment-519558175",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/1340",
+        "id": 519558175,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDUxOTU1ODE3NQ==",
+        "user": {
+            "login": "TomAugspurger",
+            "id": 1312546,
+            "node_id": "MDQ6VXNlcjEzMTI1NDY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1312546?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TomAugspurger",
+            "html_url": "https://github.com/TomAugspurger",
+            "followers_url": "https://api.github.com/users/TomAugspurger/followers",
+            "following_url": "https://api.github.com/users/TomAugspurger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TomAugspurger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TomAugspurger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TomAugspurger/subscriptions",
+            "organizations_url": "https://api.github.com/users/TomAugspurger/orgs",
+            "repos_url": "https://api.github.com/users/TomAugspurger/repos",
+            "events_url": "https://api.github.com/users/TomAugspurger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TomAugspurger/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2019-08-08T15:04:47Z",
+        "updated_at": "2019-08-08T15:04:47Z",
+        "author_association": "MEMBER",
+        "body": "FWIWI #1293 is in now.\r\n\r\n@nirizr can you provide a small code snippet that demonstrates the issue? That will make it easier to determine when this is fixed.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/519558175/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

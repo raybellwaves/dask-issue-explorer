@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1654625769",
+        "html_url": "https://github.com/dask/dask/issues/10297#issuecomment-1654625769",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10297",
+        "id": 1654625769,
+        "node_id": "IC_kwDOAbcwm85in5Xp",
+        "user": {
+            "login": "paciorek",
+            "id": 2501598,
+            "node_id": "MDQ6VXNlcjI1MDE1OTg=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/2501598?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/paciorek",
+            "html_url": "https://github.com/paciorek",
+            "followers_url": "https://api.github.com/users/paciorek/followers",
+            "following_url": "https://api.github.com/users/paciorek/following{/other_user}",
+            "gists_url": "https://api.github.com/users/paciorek/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/paciorek/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/paciorek/subscriptions",
+            "organizations_url": "https://api.github.com/users/paciorek/orgs",
+            "repos_url": "https://api.github.com/users/paciorek/repos",
+            "events_url": "https://api.github.com/users/paciorek/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/paciorek/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-07-27T21:44:24Z",
+        "updated_at": "2023-07-27T21:44:24Z",
+        "author_association": "NONE",
+        "body": "I also experienced these issues.\r\n\r\nIn addition, I'm wondering about the default of 5 (or 6). If a user has a small number of tasks relative to the number of workers, e.g., the simple case of 4 tasks and 4 workers, with this default, Dask will run through the tasks serially as discussed in #10292 . I'm wondering why the default is not -1 (once the bug with that is fixed).\r\n\r\nAs a separate comment on documentation, I think it would be helpful to have the use of `chunksize` documented with `config.set()` and/or `compute()` (but noting #10292 discussion about why documenting it in that context is tricky). I had a hard time understanding the chunking behavior without going into the code base. Perhaps I just missed it somewhere, but searching for \"chunksize\" in the docs led to a bunch of hits related to chunking in distributed data objects rather than chunking of tasks.\r\n\r\nA reason for better documentation of this option is that depending on the heterogeneity of the completion time of the tasks, a user might prefer static allocation (with even division of tasks) or dynamic allocation of tasks one by one (to avoid the possibililty that the slow tasks are clumped on on or more workers). ",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1654625769/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

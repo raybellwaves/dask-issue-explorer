@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1378554283",
+        "html_url": "https://github.com/dask/dask/pull/9802#issuecomment-1378554283",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9802",
+        "id": 1378554283,
+        "node_id": "IC_kwDOAbcwm85SKxGr",
+        "user": {
+            "login": "graingert",
+            "id": 413772,
+            "node_id": "MDQ6VXNlcjQxMzc3Mg==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/413772?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/graingert",
+            "html_url": "https://github.com/graingert",
+            "followers_url": "https://api.github.com/users/graingert/followers",
+            "following_url": "https://api.github.com/users/graingert/following{/other_user}",
+            "gists_url": "https://api.github.com/users/graingert/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/graingert/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/graingert/subscriptions",
+            "organizations_url": "https://api.github.com/users/graingert/orgs",
+            "repos_url": "https://api.github.com/users/graingert/repos",
+            "events_url": "https://api.github.com/users/graingert/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/graingert/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-01-11T10:42:23Z",
+        "updated_at": "2023-01-11T10:42:23Z",
+        "author_association": "MEMBER",
+        "body": "> Zooming back a bit, why is this change needed? From skimming the PEP, it looks like it's for improved Windows support. Is that the case? Are there other reasons?\r\n\r\nThere's an unfortunate bit of noise in the tests, but the main advantage is being able to load the dask config file containing special characters on a platform with encoding not set to UTF-8 (eg some docker containers), and detecting new code that is introduced that is not explicit about the encoding because the python default behaviour is set to change in the future.\r\n\r\nyaml and json both support auto-detecting the encoding of the passed in file, but only if the file is opened in bytes mode - opening the file in text mode bypasses that feature.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1378554283/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

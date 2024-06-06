@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1737604455",
+        "html_url": "https://github.com/dask/dask/pull/10536#issuecomment-1737604455",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10536",
+        "id": 1737604455,
+        "node_id": "IC_kwDOAbcwm85nkb1n",
+        "user": {
+            "login": "mrocklin",
+            "id": 306380,
+            "node_id": "MDQ6VXNlcjMwNjM4MA==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/306380?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mrocklin",
+            "html_url": "https://github.com/mrocklin",
+            "followers_url": "https://api.github.com/users/mrocklin/followers",
+            "following_url": "https://api.github.com/users/mrocklin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mrocklin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mrocklin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mrocklin/subscriptions",
+            "organizations_url": "https://api.github.com/users/mrocklin/orgs",
+            "repos_url": "https://api.github.com/users/mrocklin/repos",
+            "events_url": "https://api.github.com/users/mrocklin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mrocklin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-09-27T15:14:38Z",
+        "updated_at": "2023-09-27T15:14:38Z",
+        "author_association": "MEMBER",
+        "body": "Yes, a user can address this by setting the DASK_CONFIG variable.  This is\r\nadditional to that, in hopes that it maybe helps users get to a solution\r\nfaster if they're unfamiliar with setting environment variable.\r\n\r\nOn Wed, Sep 27, 2023 at 10:10\u202fAM James Bourbeau ***@***.***>\r\nwrote:\r\n\r\n> ***@***.**** commented on this pull request.\r\n>\r\n> Thanks @mrocklin <https://github.com/mrocklin>\r\n>\r\n> Isn't this type of problem what the DASK_CONFIG environment variable is\r\n> for? I don't care that much about the proposed change here, though it does\r\n> seem like it's adding extra code for a case we already support (maybe I'm\r\n> missing something though)\r\n>\r\n> We should add a bullet point for this new place configuration files can\r\n> live in https://docs.dask.org/en/stable/configuration.html\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/dask/dask/pull/10536#pullrequestreview-1646925656>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/AACKZTEUX4VVZ46VYDXBTN3X4Q6XPANCNFSM6AAAAAA5JKHOGM>\r\n> .\r\n> You are receiving this because you were mentioned.Message ID:\r\n> ***@***.***>\r\n>\r\n",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1737604455/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

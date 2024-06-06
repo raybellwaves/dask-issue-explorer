@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/657093740",
+        "html_url": "https://github.com/dask/dask/issues/6400#issuecomment-657093740",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/6400",
+        "id": 657093740,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDY1NzA5Mzc0MA==",
+        "user": {
+            "login": "jcrist",
+            "id": 2783717,
+            "node_id": "MDQ6VXNlcjI3ODM3MTc=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/2783717?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jcrist",
+            "html_url": "https://github.com/jcrist",
+            "followers_url": "https://api.github.com/users/jcrist/followers",
+            "following_url": "https://api.github.com/users/jcrist/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jcrist/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jcrist/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jcrist/subscriptions",
+            "organizations_url": "https://api.github.com/users/jcrist/orgs",
+            "repos_url": "https://api.github.com/users/jcrist/repos",
+            "events_url": "https://api.github.com/users/jcrist/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jcrist/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2020-07-11T16:51:28Z",
+        "updated_at": "2020-07-11T16:51:28Z",
+        "author_association": "MEMBER",
+        "body": "Hmmm, interesting. Usually the username is inferred from the environment (either a kerberos ticket/delegation token, or the `$USER` environment variable). We'll have to dig into how they're wrapping libhdfs to see what needs to be changed. Thanks for raising this!",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/657093740/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

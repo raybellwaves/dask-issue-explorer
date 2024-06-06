@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1778947651",
+        "html_url": "https://github.com/dask/dask/issues/10595#issuecomment-1778947651",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10595",
+        "id": 1778947651,
+        "node_id": "IC_kwDOAbcwm85qCJZD",
+        "user": {
+            "login": "d-v-b",
+            "id": 3805136,
+            "node_id": "MDQ6VXNlcjM4MDUxMzY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3805136?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/d-v-b",
+            "html_url": "https://github.com/d-v-b",
+            "followers_url": "https://api.github.com/users/d-v-b/followers",
+            "following_url": "https://api.github.com/users/d-v-b/following{/other_user}",
+            "gists_url": "https://api.github.com/users/d-v-b/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/d-v-b/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/d-v-b/subscriptions",
+            "organizations_url": "https://api.github.com/users/d-v-b/orgs",
+            "repos_url": "https://api.github.com/users/d-v-b/repos",
+            "events_url": "https://api.github.com/users/d-v-b/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/d-v-b/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-10-25T10:16:37Z",
+        "updated_at": "2023-10-25T10:16:37Z",
+        "author_association": "MEMBER",
+        "body": "I did a quick search for other instances of `except Exception`: https://github.com/search?q=repo%3Adask%2Fdask+%22except+Exception%22&type=code\r\n\r\nMight be worth checking how many of these could be replaced with something more specific",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1778947651/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

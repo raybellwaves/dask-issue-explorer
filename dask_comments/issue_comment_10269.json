@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1548453913",
+        "html_url": "https://github.com/dask/dask/pull/10269#issuecomment-1548453913",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10269",
+        "id": 1548453913,
+        "node_id": "IC_kwDOAbcwm85cS4gZ",
+        "user": {
+            "login": "Illviljan",
+            "id": 14371165,
+            "node_id": "MDQ6VXNlcjE0MzcxMTY1",
+            "avatar_url": "https://avatars.githubusercontent.com/u/14371165?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Illviljan",
+            "html_url": "https://github.com/Illviljan",
+            "followers_url": "https://api.github.com/users/Illviljan/followers",
+            "following_url": "https://api.github.com/users/Illviljan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Illviljan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Illviljan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Illviljan/subscriptions",
+            "organizations_url": "https://api.github.com/users/Illviljan/orgs",
+            "repos_url": "https://api.github.com/users/Illviljan/repos",
+            "events_url": "https://api.github.com/users/Illviljan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Illviljan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-05-15T19:31:58Z",
+        "updated_at": "2023-05-15T19:35:12Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "Thanks, @jrbourbeau for the quick feedback.\r\n\r\nOk here's some background. I've been trying to improve performance over at xarray, https://github.com/pydata/xarray/pull/7824 as it is quite slow for my use case of concatenating files with 2000+ dask arrays per file. \r\nBecause it's a lot of arrays, initialization time starts to become important for me.\r\n\r\nHere's a xarray example I've been playing around with:\r\n```python \r\nimport numpy as np\r\nimport xarray as xr\r\n\r\nt_size = 8000\r\nt = np.arange(t_size)\r\nvar = xr.Variable(dims=(\"T\",), data=np.random.randn(t_size)).chunk()\r\n\r\ndata_vars = {f\"long_name_{v}\": (\"T\", var) for v in range(500)}\r\n\r\ndsA0 = xr.Dataset(data_vars, coords={\"T\": t})\r\ndsA1 = xr.Dataset(data_vars, coords={\"T\": t + t_size})\r\n\r\ndatasets = [dsA0, dsA1]\r\n\r\nxr.combine_by_coords(datasets)\r\n```\r\n\r\n\r\nDoing some profiling you start to notice trends like this:\r\n![image](https://github.com/dask/dask/assets/14371165/750bdb4a-bbce-4e76-a371-0e5a8bc0dd97)\r\nLooks like low hanging performance fruits, right?\r\n\r\nComparing the implementations:\r\n```python\r\nimport inspect\r\nfrom typing import Callable\r\n\r\ndef has_keyword(func, keyword):\r\n    try:\r\n        return keyword in inspect.signature(func).parameters\r\n    except Exception:\r\n        return False\r\n\r\n\r\ndef has_keywords(func: Callable, keywords: tuple[str, ...]) -> bool:\r\n    try:\r\n        prms = inspect.signature(func).parameters\r\n        return all(k in prms for k in keywords)\r\n    except Exception:\r\n        return False\r\n\r\n\r\ndef test(a, b, c=2):\r\n    pass\r\n\r\n\r\n%timeit has_keyword(test, \"c\") and has_keyword(test, \"d\")\r\n50.4 \u00b5s \u00b1 1.04 \u00b5s per loop (mean \u00b1 std. dev. of 7 runs, 10000 loops each)\r\n\r\n%timeit has_keywords(test, (\"c\", \"d\"))\r\n26.4 \u00b5s \u00b1 745 ns per loop (mean \u00b1 std. dev. of 7 runs, 10000 loops each)\r\n```\r\n\r\nI'm thinking instead of allowing `str | tuple[str, ...]` just replace all the old `has_keyword` with `has_keywords` instead, granted it's non-public. When I quickly checked it didn't look like checking several keywords was that common so I'm reluctant to add a bunch of isinstance checks to make sure whether it's iterable or not.\r\n\r\nI've put this as a draft PR for now because I want to dig around for a while longer, I can ping you again when I've tried some more stuff.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1548453913/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1636209237",
+        "html_url": "https://github.com/dask/dask/issues/10396#issuecomment-1636209237",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10396",
+        "id": 1636209237,
+        "node_id": "IC_kwDOAbcwm85hhpJV",
+        "user": {
+            "login": "mrocklin",
+            "id": 306380,
+            "node_id": "MDQ6VXNlcjMwNjM4MA==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/306380?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mrocklin",
+            "html_url": "https://github.com/mrocklin",
+            "followers_url": "https://api.github.com/users/mrocklin/followers",
+            "following_url": "https://api.github.com/users/mrocklin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mrocklin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mrocklin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mrocklin/subscriptions",
+            "organizations_url": "https://api.github.com/users/mrocklin/orgs",
+            "repos_url": "https://api.github.com/users/mrocklin/repos",
+            "events_url": "https://api.github.com/users/mrocklin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mrocklin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-07-14T18:08:22Z",
+        "updated_at": "2023-07-14T18:08:22Z",
+        "author_association": "MEMBER",
+        "body": "I just briefly chatted with @jni .  My sense is that a PR making dask.cache.Cache threadsafe (or a PR to cachey doing it, if that solves the problem) would be welcome.  Any lack of engagement here is due only to lack of attention, not any kind of disagreement.  \r\n\r\nI'm hopeful that a `threading.Lock` in the right few places will suffice.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1636209237/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

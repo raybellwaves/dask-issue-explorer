@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/340311171",
+        "html_url": "https://github.com/dask/dask/issues/2840#issuecomment-340311171",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/2840",
+        "id": 340311171,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDM0MDMxMTE3MQ==",
+        "user": {
+            "login": "TomAugspurger",
+            "id": 1312546,
+            "node_id": "MDQ6VXNlcjEzMTI1NDY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1312546?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TomAugspurger",
+            "html_url": "https://github.com/TomAugspurger",
+            "followers_url": "https://api.github.com/users/TomAugspurger/followers",
+            "following_url": "https://api.github.com/users/TomAugspurger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TomAugspurger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TomAugspurger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TomAugspurger/subscriptions",
+            "organizations_url": "https://api.github.com/users/TomAugspurger/orgs",
+            "repos_url": "https://api.github.com/users/TomAugspurger/repos",
+            "events_url": "https://api.github.com/users/TomAugspurger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TomAugspurger/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2017-10-29T23:14:05Z",
+        "updated_at": "2017-10-29T23:14:59Z",
+        "author_association": "MEMBER",
+        "body": "I think the issue is in `map_partitions`. To support\r\n\r\n```python\r\ndf.div(val, axis=0)\r\n```\r\n\r\nwhere `val` is a pandas or dask Series, we need to align with `df`. We don't want to do this for `axis=1`. For `.div` style binops, we modify the call to work around this this [here](https://github.com/dask/dask/blob/643ae878d7cc5204aa096b9f9946e5ccac0aea25/dask/dataframe/core.py#L2554)\r\n\r\nThis unwanted alignment has come up in a few places recently https://github.com/dask/dask/issues/2809, https://github.com/dask/dask/issues/2807. I wonder if it's worthwhile to let the caller specify which elements of `*args` should go through `_maybe_from_pandas` and `_maybe_align_partitions`.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/340311171/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

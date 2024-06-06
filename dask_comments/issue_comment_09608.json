@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1297403784",
+        "html_url": "https://github.com/dask/dask/issues/9608#issuecomment-1297403784",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9608",
+        "id": 1297403784,
+        "node_id": "IC_kwDOAbcwm85NVM-I",
+        "user": {
+            "login": "phobson",
+            "id": 1163939,
+            "node_id": "MDQ6VXNlcjExNjM5Mzk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1163939?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phobson",
+            "html_url": "https://github.com/phobson",
+            "followers_url": "https://api.github.com/users/phobson/followers",
+            "following_url": "https://api.github.com/users/phobson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phobson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phobson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phobson/subscriptions",
+            "organizations_url": "https://api.github.com/users/phobson/orgs",
+            "repos_url": "https://api.github.com/users/phobson/repos",
+            "events_url": "https://api.github.com/users/phobson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phobson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-10-31T17:10:13Z",
+        "updated_at": "2022-10-31T17:10:13Z",
+        "author_association": "MEMBER",
+        "body": "Thanks for the issue and reproducer, @jbcurtin \r\n\r\nI'm trying to wrap my head around this. Your dataframe has 200,000 rows and 100 partitions, so each partition is 2000 rows.\r\n\r\nAnd so by \"window-range > window frame\", you mean that the \"size of the rolling window\" is larger than the number of rows in a partition. Indeed this appears to be the case when in window size is 3,000:\r\n\r\nContinuing from your example:\r\n```python\r\nfor f in futures:\r\n    print(f.result().isnull().all())\r\n\r\n# False\r\n# False\r\n# True\r\n# True\r\n# True\r\n```\r\n\r\nIf I have this right, you could (possibly) repartition your dataframe to match your window size as a work around. But I imagine there are cases where this isn't feasible. I also imagine there this a more robust and general fix that could go into the library. This isn't something I can take on right now, but I'll make sure someone with more experience sees this issue.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1297403784/reactions",
+            "total_count": 1,
+            "+1": 1,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

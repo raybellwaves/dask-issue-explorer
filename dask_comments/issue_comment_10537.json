@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1737651820",
+        "html_url": "https://github.com/dask/dask/issues/10537#issuecomment-1737651820",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10537",
+        "id": 1737651820,
+        "node_id": "IC_kwDOAbcwm85nknZs",
+        "user": {
+            "login": "ntabris",
+            "id": 46289310,
+            "node_id": "MDQ6VXNlcjQ2Mjg5MzEw",
+            "avatar_url": "https://avatars.githubusercontent.com/u/46289310?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ntabris",
+            "html_url": "https://github.com/ntabris",
+            "followers_url": "https://api.github.com/users/ntabris/followers",
+            "following_url": "https://api.github.com/users/ntabris/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ntabris/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ntabris/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ntabris/subscriptions",
+            "organizations_url": "https://api.github.com/users/ntabris/orgs",
+            "repos_url": "https://api.github.com/users/ntabris/repos",
+            "events_url": "https://api.github.com/users/ntabris/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ntabris/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-09-27T15:42:27Z",
+        "updated_at": "2023-09-27T15:42:27Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "Might be worth thinking about whether this (1) always overwrites, (2) always merged, or (3) has `merge` kwarg that determines.\r\n\r\nProbably simplest is overwrite and make caller responsible for merging in advance as needed. Haven't thought much about whether that's a problem in some cases.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1737651820/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

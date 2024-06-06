@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1136339056",
+        "html_url": "https://github.com/dask/dask/issues/9079#issuecomment-1136339056",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9079",
+        "id": 1136339056,
+        "node_id": "IC_kwDOAbcwm85Duyhw",
+        "user": {
+            "login": "pavithraes",
+            "id": 33131404,
+            "node_id": "MDQ6VXNlcjMzMTMxNDA0",
+            "avatar_url": "https://avatars.githubusercontent.com/u/33131404?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pavithraes",
+            "html_url": "https://github.com/pavithraes",
+            "followers_url": "https://api.github.com/users/pavithraes/followers",
+            "following_url": "https://api.github.com/users/pavithraes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pavithraes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pavithraes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pavithraes/subscriptions",
+            "organizations_url": "https://api.github.com/users/pavithraes/orgs",
+            "repos_url": "https://api.github.com/users/pavithraes/repos",
+            "events_url": "https://api.github.com/users/pavithraes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pavithraes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-05-24T19:16:12Z",
+        "updated_at": "2022-07-14T18:00:53Z",
+        "author_association": "MEMBER",
+        "body": "@eric-yu-snorkel Thanks for reporting!\r\n\r\nI wasn't able to execute your exact example because `pd.DataFrame([{'foo': ['string']}]).astype({'foo': 'category'})` gives a `TypeError: unhashable type: 'list'` even with only pandas -- I think it was because we're creating the DataFrame using a dict within a list.\r\n\r\nIt still looks like an error though, here's a reproducer:\r\n\r\n```python\r\nimport dask.dataframe as dd\r\nimport pandas as pd\r\n\r\ndf1 = pd.DataFrame({'foo': [float('nan')]})\r\nddf1 = dd.from_pandas(df1, npartitions=1)\r\n\r\ndf2 = pd.DataFrame({'foo': ['string']})\r\nddf2 = dd.from_pandas(df2, npartitions=1)\r\n\r\ndf2['foo'] = df2['foo'].astype('category')\r\nddf2['foo'] = ddf2['foo'].astype('category')\r\n\r\npd.concat([df1, df2]) # Works\r\n\r\ndd.concat([ddf1, ddf2]) # AttributeError: 'numpy.ndarray' object has no attribute 'categories'\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1136339056/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1514007338",
+        "html_url": "https://github.com/dask/dask/pull/10192#issuecomment-1514007338",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10192",
+        "id": 1514007338,
+        "node_id": "IC_kwDOAbcwm85aPesq",
+        "user": {
+            "login": "vyasr",
+            "id": 1538165,
+            "node_id": "MDQ6VXNlcjE1MzgxNjU=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1538165?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vyasr",
+            "html_url": "https://github.com/vyasr",
+            "followers_url": "https://api.github.com/users/vyasr/followers",
+            "following_url": "https://api.github.com/users/vyasr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vyasr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vyasr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vyasr/subscriptions",
+            "organizations_url": "https://api.github.com/users/vyasr/orgs",
+            "repos_url": "https://api.github.com/users/vyasr/repos",
+            "events_url": "https://api.github.com/users/vyasr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vyasr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-04-19T01:28:15Z",
+        "updated_at": "2023-04-19T01:29:35Z",
+        "author_association": "CONTRIBUTOR",
+        "body": "Hey @jrbourbeau, thanks for taking the time to look at this. I'm one of the RAPIDS devs and can provide a bit more context on why we want this.\r\n\r\n1. Many different RAPIDS packages support parallelization with dask, so we have to maintain our dask dependency in conda recipes/environments and pip dependencies (setup.[py|cfg]/pyproject.toml) across many repositories. Since RAPIDS (in particular `dask_cudf`) integrates with dask at a fairly deep level, we're quite susceptible to breaks from changes in dask, so we typically hard pin our dask dependency each release and then unpin again during development. This process is both tedious and error-prone, and we'd like to come up with an alternative. **Improving this situation is the primary motivation for the current request**.\r\n At present, the solution that we're considering is to create a metapackage that could encode just the dask/distributed/dask-cuda dependency information. That way every RAPIDS package using dask could simply point to that dependency and we would have a single source of truth for the pinning. In order for this to really be useful, that dependency would need to also support installation of nightlies. \r\n    - Installation of nightlies is possible with pip, which [supports installing pre-releases if a package's version contains pre or dev segments](https://pip.pypa.io/en/stable/cli/pip_install/#pre-release-versions). If dask nightlies existed on PyPI, our metapackage could simply encode e.g. `dask >= 2023.3.2.dev0` as the minimum requirement and automatically pick up the latest nightly at any given time. At release time we would then update the hard pin to `dask == 2023.5.2` and have that automatically propagate across RAPIDS.\r\n    - Installation of dask nightlies is not currently possible with conda since conda-build recipes [do not currently support pegging to a specific channel/label](https://github.com/conda/conda-build/issues/532), but since dask nightlies already exist on conda we would be well-positioned to take advantage if that feature is implemented. Even without that, the metapackage solution would still help with maintaining a single source of truth for our dask dependency.\r\n2. My very unscientific, anecdotal estimate is that roughly once every other release some change to dask breaks something in a RAPIDS package in such a way that the only stable path forward for users of our nightlies is to install the latest nightly of both said RAPIDS package and dask/distributed/dask-cuda. In other cases, the latest nightly of a RAPIDS package may rely on an unreleased feature in one of the dask packages, leading to the same issue. There is currently no way to enforce this. Having the dependency encoded directly in the file would help, since then users could do something like `pip install -U --upgrade-strategy eager cudf` and automatically have dask/distributed updated to the latest as well. There is no trivial way to accomplish this for conda users, but conda users of our nightlies are also often in the habit of frequently blowing away and recreating their environments and that use case would also automatically trigger the necessary updates. In other words, being able to actually encode the dependency on the nightly into our packages would make life easier for users of RAPIDS nightlies by insulating them from need to also manually update dask dependencies.\r\n3. Currently we build and test conda and pip package. When testing conda packages, we install dask/distributed/dask-cuda using the nightly label to get the latest. For pip packaging, we do exactly what you suggest above by pip installing directly from the Github URL. Getting these two cases to match would be nice, but certainly isn't critical. However, at least in the pip case the above solution would obviate the need to maintain separate logic for installing dask/distributed/dask-cuda in CI since the metapackage would automatically allow installation of nightlies so we could remove the extra logic to manually install from source. \r\n\r\n@pentschev and @galipremsagar could probably provide additional information on benefits. Feel free to let me know if anything above could use clarification. ",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1514007338/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

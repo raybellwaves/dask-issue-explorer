@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1223349988",
+        "html_url": "https://github.com/dask/dask/pull/9416#issuecomment-1223349988",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9416",
+        "id": 1223349988,
+        "node_id": "IC_kwDOAbcwm85I6tbk",
+        "user": {
+            "login": "gjoseph92",
+            "id": 3309802,
+            "node_id": "MDQ6VXNlcjMzMDk4MDI=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3309802?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gjoseph92",
+            "html_url": "https://github.com/gjoseph92",
+            "followers_url": "https://api.github.com/users/gjoseph92/followers",
+            "following_url": "https://api.github.com/users/gjoseph92/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gjoseph92/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gjoseph92/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gjoseph92/subscriptions",
+            "organizations_url": "https://api.github.com/users/gjoseph92/orgs",
+            "repos_url": "https://api.github.com/users/gjoseph92/repos",
+            "events_url": "https://api.github.com/users/gjoseph92/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gjoseph92/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-23T00:07:12Z",
+        "updated_at": "2022-08-23T00:07:12Z",
+        "author_association": "MEMBER",
+        "body": "I agree with your trepidation. I tried to avoid doing this, but my implementation without it ended up copying so much from `normalize_chunks` that I grudgingly made this change. You can take a look at https://github.com/dask/dask/pull/9417 and see if you can think of a way to avoid it, but supporting the many possibilities of numeric chunk, tuple chunksize, explicit tuple of tuples, mixed tuple of ints and tuple of tuples, all of that with the possibility of lists or ndarrays, was not something I wanted to write test coverage for :)\r\n\r\nI was hoping that this might at least be useful to something somewhere else in the future.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1223349988/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

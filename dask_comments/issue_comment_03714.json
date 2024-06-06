@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/488015584",
+        "html_url": "https://github.com/dask/dask/issues/3714#issuecomment-488015584",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/3714",
+        "id": 488015584,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDQ4ODAxNTU4NA==",
+        "user": {
+            "login": "TomAugspurger",
+            "id": 1312546,
+            "node_id": "MDQ6VXNlcjEzMTI1NDY=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1312546?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TomAugspurger",
+            "html_url": "https://github.com/TomAugspurger",
+            "followers_url": "https://api.github.com/users/TomAugspurger/followers",
+            "following_url": "https://api.github.com/users/TomAugspurger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TomAugspurger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TomAugspurger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TomAugspurger/subscriptions",
+            "organizations_url": "https://api.github.com/users/TomAugspurger/orgs",
+            "repos_url": "https://api.github.com/users/TomAugspurger/repos",
+            "events_url": "https://api.github.com/users/TomAugspurger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TomAugspurger/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2019-04-30T16:13:00Z",
+        "updated_at": "2019-04-30T16:13:00Z",
+        "author_association": "MEMBER",
+        "body": "Thanks for the report. Something is going awry in https://github.com/dask/dask/blob/d8a4f3be9a6ec685261ed043a45ecc019055ec0d/dask/dataframe/core.py#L4432.\r\n\r\nI think this is perhaps hard to support. Dask's metadata requires that the divisions be the minimum value in each partition and the max value of the last partition. When a user passes an anchored offset like `W-THU`, we're stuck because the first / last value may not be on that anchor.\r\n\r\nTo summarize, I think this example should raise on the `.repartition(freq='W-THU')` when we can't actually create divisions with that frequency (i.e. the current dataset doesn't end and begin on a Thursday. Does that make sense?",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/488015584/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

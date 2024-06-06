@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1226300100",
+        "html_url": "https://github.com/dask/dask/pull/9417#issuecomment-1226300100",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/9417",
+        "id": 1226300100,
+        "node_id": "IC_kwDOAbcwm85JF9rE",
+        "user": {
+            "login": "ian-r-rose",
+            "id": 5728311,
+            "node_id": "MDQ6VXNlcjU3MjgzMTE=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5728311?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ian-r-rose",
+            "html_url": "https://github.com/ian-r-rose",
+            "followers_url": "https://api.github.com/users/ian-r-rose/followers",
+            "following_url": "https://api.github.com/users/ian-r-rose/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ian-r-rose/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ian-r-rose/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ian-r-rose/subscriptions",
+            "organizations_url": "https://api.github.com/users/ian-r-rose/orgs",
+            "repos_url": "https://api.github.com/users/ian-r-rose/repos",
+            "events_url": "https://api.github.com/users/ian-r-rose/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ian-r-rose/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-08-24T20:43:43Z",
+        "updated_at": "2022-08-24T20:43:43Z",
+        "author_association": "MEMBER",
+        "body": "I should add, I'm very much in favor of having `from_delayed` take arrays or lists of delayeds.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1226300100/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

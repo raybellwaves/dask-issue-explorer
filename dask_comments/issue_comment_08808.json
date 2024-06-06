@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1067742403",
+        "html_url": "https://github.com/dask/dask/issues/8808#issuecomment-1067742403",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/8808",
+        "id": 1067742403,
+        "node_id": "IC_kwDOAbcwm84_pHTD",
+        "user": {
+            "login": "fjetter",
+            "id": 8629629,
+            "node_id": "MDQ6VXNlcjg2Mjk2Mjk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/8629629?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fjetter",
+            "html_url": "https://github.com/fjetter",
+            "followers_url": "https://api.github.com/users/fjetter/followers",
+            "following_url": "https://api.github.com/users/fjetter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fjetter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fjetter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fjetter/subscriptions",
+            "organizations_url": "https://api.github.com/users/fjetter/orgs",
+            "repos_url": "https://api.github.com/users/fjetter/repos",
+            "events_url": "https://api.github.com/users/fjetter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fjetter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2022-03-15T09:19:02Z",
+        "updated_at": "2022-03-15T09:19:02Z",
+        "author_association": "MEMBER",
+        "body": "We removed a lot of special treatmenents in `check_thread_leak` function to track down leakages. One of the changes was that we now \"warm up\" the BaseTCPConnector Threadpool, see https://github.com/dask/distributed/blob/2fffe74dde40238a3387d12740ff9a54c16acb9f/distributed/utils_test.py#L1573-L1576 \r\nhttps://github.com/dask/distributed/blob/2fffe74dde40238a3387d12740ff9a54c16acb9f/distributed/comm/tcp.py#L411-L419\r\n\r\nsince otherwise the thread leakage check would detect false positives\r\n\r\nThat was part of https://github.com/dask/distributed/pull/5771\r\n\r\nThis seems to trigger the exception when Tornado tries to initialize the `netutil.ExecutorResolver`. Not sure why this raises but this resolver has been deprecated in tornado 5+, see also https://github.com/dask/distributed/pull/5771/files#r800928588",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1067742403/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

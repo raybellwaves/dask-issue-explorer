@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/2079409045",
+        "html_url": "https://github.com/dask/dask/issues/11070#issuecomment-2079409045",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/11070",
+        "id": 2079409045,
+        "node_id": "IC_kwDOAbcwm8578UOV",
+        "user": {
+            "login": "jtilly",
+            "id": 6807275,
+            "node_id": "MDQ6VXNlcjY4MDcyNzU=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/6807275?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jtilly",
+            "html_url": "https://github.com/jtilly",
+            "followers_url": "https://api.github.com/users/jtilly/followers",
+            "following_url": "https://api.github.com/users/jtilly/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jtilly/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jtilly/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jtilly/subscriptions",
+            "organizations_url": "https://api.github.com/users/jtilly/orgs",
+            "repos_url": "https://api.github.com/users/jtilly/repos",
+            "events_url": "https://api.github.com/users/jtilly/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jtilly/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2024-04-26T13:34:13Z",
+        "updated_at": "2024-04-26T13:34:13Z",
+        "author_association": "NONE",
+        "body": "Here's another example, where I struggle to turn off query planning: I'm using [plateau](https://github.com/data-engineering-collective/plateau) to load a dask dataframe from disk:\r\n\r\n```python\r\nimport dask\r\nimport pandas as pd\r\nfrom tempfile import TemporaryDirectory\r\nfrom plateau.io.dask.dataframe import read_dataset_as_ddf\r\nfrom plateau.io.eager import store_dataframes_as_dataset\r\n\r\ndataset_dir = TemporaryDirectory()\r\nstore_url = f\"hfs://{dataset_dir.name}\"\r\n\r\n\r\ndef create_plateau_dataset():\r\n    store_dataframes_as_dataset(\r\n        dfs=[pd.DataFrame({\"x\": [1, 2, 3], \"y\": [3, 4, 5]})],\r\n        dataset_uuid=\"abc123\",\r\n        store=store_url,\r\n    )\r\n\r\n\r\nif __name__ == \"__main__\":\r\n\r\n    create_plateau_dataset()\r\n\r\n    with dask.config.set({\"dataframe.query-planning\": False}):\r\n        ddf = read_dataset_as_ddf(dataset_uuid=\"abc123\", store=store_url)\r\n        print(hasattr(ddf, \"_expr\"))  # True\r\n```\r\n\r\nHere, I wouldn't know which modules to reload to get the desired behavior.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/2079409045/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

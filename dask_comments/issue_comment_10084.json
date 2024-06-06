@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1494439624",
+        "html_url": "https://github.com/dask/dask/issues/10084#issuecomment-1494439624",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10084",
+        "id": 1494439624,
+        "node_id": "IC_kwDOAbcwm85ZE1bI",
+        "user": {
+            "login": "fjetter",
+            "id": 8629629,
+            "node_id": "MDQ6VXNlcjg2Mjk2Mjk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/8629629?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fjetter",
+            "html_url": "https://github.com/fjetter",
+            "followers_url": "https://api.github.com/users/fjetter/followers",
+            "following_url": "https://api.github.com/users/fjetter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fjetter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fjetter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fjetter/subscriptions",
+            "organizations_url": "https://api.github.com/users/fjetter/orgs",
+            "repos_url": "https://api.github.com/users/fjetter/repos",
+            "events_url": "https://api.github.com/users/fjetter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fjetter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-04-03T14:32:36Z",
+        "updated_at": "2023-04-03T14:32:36Z",
+        "author_association": "MEMBER",
+        "body": "Generally I'm +1 for this but I suggest to hold off with this until we have a bit more experience with the metering stack and get a better feeling where this is useful.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1494439624/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

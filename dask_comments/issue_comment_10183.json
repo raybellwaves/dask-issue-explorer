@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/1506733346",
+        "html_url": "https://github.com/dask/dask/issues/10183#issuecomment-1506733346",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/10183",
+        "id": 1506733346,
+        "node_id": "IC_kwDOAbcwm85Zzu0i",
+        "user": {
+            "login": "phofl",
+            "id": 61934744,
+            "node_id": "MDQ6VXNlcjYxOTM0NzQ0",
+            "avatar_url": "https://avatars.githubusercontent.com/u/61934744?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phofl",
+            "html_url": "https://github.com/phofl",
+            "followers_url": "https://api.github.com/users/phofl/followers",
+            "following_url": "https://api.github.com/users/phofl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phofl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phofl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phofl/subscriptions",
+            "organizations_url": "https://api.github.com/users/phofl/orgs",
+            "repos_url": "https://api.github.com/users/phofl/repos",
+            "events_url": "https://api.github.com/users/phofl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phofl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2023-04-13T10:33:20Z",
+        "updated_at": "2023-04-13T10:33:20Z",
+        "author_association": "MEMBER",
+        "body": "scikit-image pinned script to <1.9.2 on conda forge which resulted in some weird differences. Pinning scikit-image to <0.20 for now solves this, https://github.com/conda-forge/scikit-image-feedstock/pull/102 for context. The pin is already gone on main https://github.com/scikit-image/scikit-image/blob/main/pyproject.toml, so will be fixed with the next release.\r\n\r\nThe package diff is anyone is interested:\r\n```\r\n          Name_base      Name_new Version_base Version_new\r\n114    intel-openmp           NaN     2023.0.0         NaN\r\n144         libblas       libblas        3.9.0       3.9.0\r\n148        libcblas      libcblas        3.9.0       3.9.0\r\n158        libhwloc           NaN        2.9.0         NaN\r\n161       liblapack     liblapack        3.9.0       3.9.0\r\n173         libxml2           NaN       2.10.4         NaN\r\n188             mkl           NaN     2022.1.0         NaN\r\n204         numexpr       numexpr        2.7.3       2.8.4\r\n227           pooch           NaN        1.7.0         NaN\r\n233  pthreads-win32           NaN        2.9.1         NaN\r\n277    scikit-image  scikit-image       0.20.0      0.20.0\r\n279           scipy         scipy       1.10.1       1.9.1\r\n290             tbb           NaN     2021.8.0         NaN\r\n343             NaN      libflang          NaN       5.0.0\r\n344             NaN   libopenblas          NaN      0.3.21\r\n345             NaN     llvm-meta          NaN       5.0.0\r\n346             NaN         nomkl          NaN         1.0\r\n347             NaN        openmp          NaN       5.0.0\r\n```",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/1506733346/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

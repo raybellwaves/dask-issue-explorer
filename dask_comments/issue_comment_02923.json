@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/346463158",
+        "html_url": "https://github.com/dask/dask/issues/2923#issuecomment-346463158",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/2923",
+        "id": 346463158,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDM0NjQ2MzE1OA==",
+        "user": {
+            "login": "jakirkham",
+            "id": 3019665,
+            "node_id": "MDQ6VXNlcjMwMTk2NjU=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3019665?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jakirkham",
+            "html_url": "https://github.com/jakirkham",
+            "followers_url": "https://api.github.com/users/jakirkham/followers",
+            "following_url": "https://api.github.com/users/jakirkham/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jakirkham/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jakirkham/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jakirkham/subscriptions",
+            "organizations_url": "https://api.github.com/users/jakirkham/orgs",
+            "repos_url": "https://api.github.com/users/jakirkham/repos",
+            "events_url": "https://api.github.com/users/jakirkham/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jakirkham/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2017-11-22T20:21:08Z",
+        "updated_at": "2017-11-22T20:21:08Z",
+        "author_association": "MEMBER",
+        "body": "Not sure if this would work for your use case. Though would mention that [Zarr]( https://github.com/alimanfoo/zarr ) also does something like this when writing to a [`DirectoryStore`]( http://zarr.readthedocs.io/en/latest/api/storage.html#zarr.storage.DirectoryStore ). It supports a [`MutableMapping`]( https://docs.python.org/3/library/collections.abc.html#collections-abstract-base-classes ) interface. If you know your data to be arrays, then it has a higher level interface for that use case as well.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/346463158/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

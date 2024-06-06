@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://api.github.com/repos/dask/dask/issues/comments/981516785",
+        "html_url": "https://github.com/dask/dask/issues/8334#issuecomment-981516785",
+        "issue_url": "https://api.github.com/repos/dask/dask/issues/8334",
+        "id": 981516785,
+        "node_id": "IC_kwDOAbcwm846gMHx",
+        "user": {
+            "login": "jakirkham",
+            "id": 3019665,
+            "node_id": "MDQ6VXNlcjMwMTk2NjU=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3019665?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jakirkham",
+            "html_url": "https://github.com/jakirkham",
+            "followers_url": "https://api.github.com/users/jakirkham/followers",
+            "following_url": "https://api.github.com/users/jakirkham/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jakirkham/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jakirkham/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jakirkham/subscriptions",
+            "organizations_url": "https://api.github.com/users/jakirkham/orgs",
+            "repos_url": "https://api.github.com/users/jakirkham/repos",
+            "events_url": "https://api.github.com/users/jakirkham/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jakirkham/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2021-11-29T10:48:31Z",
+        "updated_at": "2021-11-29T10:48:31Z",
+        "author_association": "MEMBER",
+        "body": "Yeah we did look at using `map`. Unfortunately as it doesn't return a `Future`, but instead returns a blocking iterator, it is kind of hard to work with in the context of the Dask scheduler. Ideally there would be something like `map_async`, which would return a `Future` (for [example]( https://stackoverflow.com/a/35909364 )). Though Idk if that kind of thing is in-scope for the `Executor` interface (as it may involve more machinery under-the-hood).\r\n\r\nThe batching functionality with `chunksize` should allow one to batch execute multiple tasks in a single job. Though as you note this is a different thing.\r\n\r\nThere are probably other improvements that can be made to the local scheduler. Of particular interest is a first class `Future` object ( https://github.com/dask/dask/issues/6380 ) to allow things like `persist` to work nicely on the local scheduler (many use cases for this listed in that issue). This may require other changes to occur in how the local scheduler behaves.",
+        "reactions": {
+            "url": "https://api.github.com/repos/dask/dask/issues/comments/981516785/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+        },
+        "performed_via_github_app": null
+    }
+]

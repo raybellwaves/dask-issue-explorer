@@ -2,6 +2,19 @@
 
 ORG = "dask"
 REPO = "dask"
+BOTS = ["dependabot[bot]", "GPUtester", "github-actions[bot]"]
+
+
+def chat_response(content):
+    import os
+    from openai import OpenAI
+
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": content}],
+    )
+    return response.choices[0].message.content
 
 
 def pull_issues(org: str = ORG, repo: str = REPO) -> None:
@@ -29,7 +42,8 @@ def pull_issues(org: str = ORG, repo: str = REPO) -> None:
         if not page_issues:
             break
         only_issues = [issue for issue in page_issues if "pull_request" not in issue]
-        issues.extend(only_issues)
+        no_bots = [issue for issue in only_issues if issue["user"]["login"] not in BOTS]
+        issues.extend(no_bots)
         page += 1
 
     for issue in tqdm(issues, "fetching issues"):
@@ -62,12 +76,18 @@ def concat_issues(repo: str = REPO) -> None:
 
     df = pd.DataFrame()
     for file in tqdm(sorted(os.listdir(f"{repo}_issues")), "concatenating issues"):
+        print(f"{repo}_issues/{file}")
         with open(f"{repo}_issues/{file}", "r") as f:
             data = json.load(f)
         _df = pd.json_normalize(data)
         _df["label_names"] = _df["labels"].apply(
             lambda x: [label["name"] for label in x] if isinstance(x, list) else []
         )
+        # Use an LLM to help categorize issues
+        _df["LLM_title_subject"] = chat_response(
+            f"Give me a one word summary of the following GitHub {repo} issue title: {_df['title'][0]}"
+        )
+
         # TODO remove issue template?
         df = pd.concat([df, _df], axis=0).reset_index(drop=True)
 
@@ -247,15 +267,14 @@ def concat_users(repo: str = REPO) -> None:
     return None
 
 
-def create_table(repo: str = REPO) -> None:
+def create_dataframe(repo: str = REPO) -> None:
     # Create a single dataframe
 
     # Filter out bots
-    BOTS = ["dependabot[bot]", "GPUtester", "github-actions[bot]"]
 
     import pandas as pd
 
-    core_columns = [
+    issue_core_columns = [
         "number",
         "title",
         "issue_text",
@@ -278,7 +297,7 @@ def create_table(repo: str = REPO) -> None:
         "issue_reactions.eyes",
         "n_comments",
     ]
-    df_issues = pd.read_csv(f"{repo}_issue_details.csv")[core_columns]
+    df_issues = pd.read_csv(f"{repo}_issue_details.csv")[issue_core_columns]
     df_issues = df_issues.loc[~df_issues["issue_user.login"].isin(BOTS)].reset_index(
         drop=True
     )
@@ -395,6 +414,8 @@ def create_table(repo: str = REPO) -> None:
     df = df[order_cols]
 
     df.to_parquet(f"{repo}_issue_with_comments.parquet")
+    # Move the large text columns body_text column to a vector database
+
     # Small version with just issue and some stats from comments
     commenters = df.groupby("number")["comment_user.login_name_company"].agg(list)
     comment_reactions = df.groupby("number")["comment_reactions.total_count"].sum()
@@ -422,13 +443,30 @@ def create_table(repo: str = REPO) -> None:
     # )
 
 
+def create_vector_db(repo: str = REPO) -> None:
+    import pandas as pd
+    from pymilvus import MilvusClient, model
+
+    client = MilvusClient(f"./milvus_{repo}.db")
+    client.create_collection(collection_name="issue_text", dimension=768)
+
+    # This will download a small embedding model "paraphrase-albert-small-v2" (~50MB).
+    embedding_fn = model.DefaultEmbeddingFunction()
+
+    df = pd.read_parquet(f"{repo}_issue_with_comments.parquet")
+    issue_vectors = embedding_fn.encode_documents(df["issue_text"].values)
+    subject
+
+
 if __name__ == "__main__":
-    # pythohn main.py
+    # python main.py
 
     # pull_issues()
-    # concat_issues()
+    concat_issues()
     # pull_comments()
     # concat_comments()
     # pull_users()
     # concat_users()
-    create_table()
+    # create_dataframe()
+    # create_vector_db()
+    pass

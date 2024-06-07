@@ -1,3 +1,4 @@
+# uv pip install -r requirements.txt --find-links https://download.pytorch.org/whl/cpu
 datasets
 huggingface_hub
 geodatasets
@@ -6,6 +7,8 @@ geopandas
 folium
 ipython
 ipykernel
+ipywidgets
+jupyterlab
 langchain
 langchain-cli
 langchain-experimental
@@ -17,9 +20,11 @@ openai
 pandas
 pandasai
 pyarrow
+pymilvus[model]
 streamlit
 streamlit-authenticator
 streamlit-folium
 tabulate
+torch
 transformers
 watchdog
